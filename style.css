@@ -1,0 +1,132 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Paleta de cores */
+:root {
+    --primary-color:#ffffff;
+    --secondary-color:#0cc0df;
+    --background-color: #f5f5f5;
+    --text-color:#000000;
+    --header-bg-color: #fff;
+    --footer-bg-color: #222;
+}
+
+/* Layout responsivo */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--header-bg-color);
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-color);
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: var(--primary-color);
+    color:#000000;
+}
+
+/* Estrutura básica */
+main {
+    margin-top: 100px; /* Compensa o header fixo */
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+/* Galeria de imagens */
+.slideshow-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background-color: #ddd;
+}
+
+/* Notícias expansíveis */
+.news-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Rodapé */
+footer {
+    background-color: var(--footer-bg-color);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 10px;
+}
+
+footer ul li {
+    margin: 0 10px;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    .news-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav ul {
+        justify-content: flex-end;
+    }
+}
+
+@media (min-width: 1024px) {
+    .news-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
